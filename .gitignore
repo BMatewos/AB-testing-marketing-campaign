@@ -13,3 +13,6 @@ data/raw/
 data/processed/
 data/control.csv
 data/test.csv
+data/control.csv
+data/test.csv
+data/processed/*
