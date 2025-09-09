@@ -11,3 +11,5 @@ __pycache__/
 # Data
 data/raw/
 data/processed/
+data/control.csv
+data/test.csv
