@@ -16,3 +16,5 @@ data/test.csv
 data/control.csv
 data/test.csv
 data/processed/*
+notebooks/.ipynb_checkpoints/
+.DS_Store
