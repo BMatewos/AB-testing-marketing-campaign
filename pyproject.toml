@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ab_testing_marketing_campaign"
+version = "0.1.0"
+description = "A/B testing project to analyze marketing campaign performance with reusable helpers."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Matewos Berhe" }]
+license = { text = "MIT" }
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "jupyter"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
