@@ -1,6 +1,6 @@
-# 📊 A/B Testing Marketing Campaigns
+# A/B Testing Marketing Campaigns
 
-## 🔹 Project Overview
+## Project Overview
 This project analyzes **Control vs Test marketing campaigns** to evaluate which strategy performs better.  
 The dataset comes from two CSV files: `control_group.csv` and `test_group.csv`.  
 
@@ -8,7 +8,7 @@ While many tutorials stop at **renaming columns and making pie charts**, this pr
 
 ---
 
-## 🔹 Workflow
+## Workflow
 
 1. **Data Loading & Renaming**  
    - Load control & test CSVs.  
@@ -51,42 +51,33 @@ While many tutorials stop at **renaming columns and making pie charts**, this pr
 
 
 **Conclusion:**  
-- ✅ Conversion Rate: Test is **+22.22% higher** than Control (statistically significant).  
-- ❌ CTR difference is **not significant** at α=0.05.  
+- Conversion Rate: Test is **+22.22% higher** than Control (statistically significant).  
+- CTR difference is **not significant** at α=0.05.  
 
 ---
 
-## 🔹 Executive Summary
+## Executive Summary
 - The **Test campaign** achieved a **22% lift in conversion rate** compared to the Control group, with statistical significance.  
 - The **Click-Through Rate (CTR)** difference was minimal (+1.3%) and not statistically significant.  
 - Marketing teams could use the **Control campaign** for broad awareness (higher reach and total purchases), while the **Test campaign** shows potential for more efficient targeted conversions.  
-- Overall: **Control = volume winner**, **Test = efficiency winner**.  
+- Overall: **Control = volume winner**, **Test = efficiency winner**.   
 
 ---
 
-## 🔹 Why This Project Is Different
-- Goes beyond article-style analysis.  
-- Adds **date parsing, proper missing handling, sanity checks**.  
-- Includes **derived KPIs** used in real marketing analytics.  
-- Runs **statistical significance tests + confidence intervals**.  
-- Produces a clear **executive summary** for decision-makers.  
-
----
-
-## 🔹 Tools Used
+## Tools Used
 - Python, Pandas, NumPy  
 - Plotly (interactive visualizations)  
 - Statistical testing (z-tests, confidence intervals)  
 
 ---
 
-## 🔹 Quick Start
+## Quick Start
 
 Clone this repo and run the notebook/script:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/ab_testing_marketing.git
+git clone https://github.com/BMatewos/ab_testing_marketing.git 
 cd ab_testing_marketing
 
 # 2. (Optional) Create a virtual environment
@@ -107,7 +98,4 @@ python ab_testing.py
 
 ---
 
-✅ Copy everything above (between the ```markdown ... ``` block) into your **README.md** file.  
-
-Would you like me to also prepare the `requirements.txt` content and a **minimal notebook structure** (`A_B_Testing.ipynb`) so your repo is fully ready to run?
 
