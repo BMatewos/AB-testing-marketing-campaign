@@ -2,9 +2,10 @@
 
 ## Project Overview
 This project analyzes **Control vs Test marketing campaigns** to evaluate which strategy performs better.  
-The dataset comes from two CSV files: `control.csv` and `test.csv`.  
+The dataset comes from two CSV files: `control.csv` and `test.csv`. 
+This project delivers the full A/B testing pipeline from data cleaning, KPI setup to statistical tests and confidence interval to make a clear, data driven decision
 
-This project delivers the full A/B testing pipeline—from data cleaning and KPI setup to statistical tests and confidence intervals—so you can make a clear, data-driven decision.
+
 ---
 
 ## Workflow
