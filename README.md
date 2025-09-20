@@ -4,7 +4,8 @@
 This project analyzes **Control vs Test marketing campaigns** to evaluate which strategy performs better.  
 The dataset comes from two CSV files: `control.csv` and `test.csv`.  
 
-While many tutorials stop at **renaming columns and making pie charts**, this project goes further by applying **data cleaning, KPI engineering, statistical tests, and confidence intervals** for a complete A/B testing workflow.  
+this project goes further by applying **data cleaning, KPI engineering, statistical tests, and confidence intervals** for a complete A/B testing workflow.  
+
 
 ---
 
@@ -12,62 +13,70 @@ While many tutorials stop at **renaming columns and making pie charts**, this pr
 
 1. **Data Loading & Renaming**  
    - Load control & test CSVs.  
-   - Standardize schema with clear, human-readable column names.  
-
+   - Rename columns to a consistent, readable schema (e.g., amount_spent, impressions, reach, clicks, purchases) so merging and analysis are straightforward.
 2. **Data Cleaning & Preparation**  
    - Parse campaign dates (`pd.to_datetime`).  
    - Handle missing values consistently:  
-     - Counts (clicks, purchases, etc.) → filled with 0.  
-     - Spend/impressions/reach → filled with mean.  
+     - **Numeric columns:** fill with the column mean, then round count-like fields to integers.
+     -  **Categorical columns:** fill with the mode (most frequent value).
    - Apply sanity checks:  
      - `clicks ≤ impressions`  
      - `purchases ≤ clicks`  
      - `reach ≤ impressions`  
-     - No negative values.  
+     - No negative values.
+
+
 
 3. **Feature Engineering (KPIs)**  
-   - CTR (Click-Through Rate)  
-   - CR (Conversion Rate)  
+   - CTR (Click-Through Rate) = clicks / impressions
+   - CAC (cost per acquisition) = spend / purchases  
+   - CR (Conversion Rate) = purchases / reach 
    - CPM (Cost per 1000 impressions)  
    - CPC (Cost per click)  
-   - CPA (Cost per acquisition)  
+   - CPA (Cost per acquisition)
+
 
 4. **Align Overlapping Periods**  
-   - Ensure both campaigns are compared only in the same time window.  
+   - Compare campaigns on the same dates only (overlapping period). 
 
 5. **Exploratory Data Analysis (EDA)**  
-   - Scatter plots (Impressions vs Spend, Content vs Clicks, Cart vs Purchases).  
-   - Pie charts comparing campaign totals.  
-   - Line charts over time (CTR/CR trends).  
+   - Bar chart of campaign totals (spend, impressions, reach, clicks, purchases).
+   - Line charts over time (CTR, CR, spend).
+   - Scatter checks (e.g., clicks vs impressions, purchases vs reach).
+   - Correlation heatmaps by campaign. 
+
+
+
 
 6. **Statistical Testing**  
-   - Two-proportion z-tests for CTR & CR.  
-   - p-values reported for statistical significance.  
+   - Two-proportion z-tests on totals for CTR (clicks/impressions) and CR (purchases/reach).
+   - Report p-values for significance. 
 
 7. **Confidence Intervals & Lift %**  
-   - 95% confidence intervals for CTR & CR.  
-   - Percentage lift from Control → Test.  
-   - Clear, human-readable conclusion (e.g., *“Test CR is +22% higher and statistically significant”*).  
+   - 95% CIs for CTR & CR.
+   - Relative lift (Test vs Control).
+   - Clear, human-readable conclusion (e.g., “Test CR is +64% higher and statistically significant”).
 
 
 **Conclusion:**  
-- Conversion Rate: Test is **+22.22% higher** than Control (statistically significant).  
-- CTR difference is **not significant** at α=0.05.  
+- CTR: Test ≈ 8.09%, Control ≈ 4.89% → +65% lift, p < 0.001.
+- CR: Test ≈ 0.97%, Control ≈ 0.59% → +64% lift, p < 0.001.
+- CAC: Control ≈ 4.38, Test ≈ 4.92 (≈ +12% higher for Test).
 
 ---
 
-## Executive Summary
-- The **Test campaign** achieved a **22% lift in conversion rate** compared to the Control group, with statistical significance.  
-- The **Click-Through Rate (CTR)** difference was minimal (+1.3%) and not statistically significant.  
-- Marketing teams could use the **Control campaign** for broad awareness (higher reach and total purchases), while the **Test campaign** shows potential for more efficient targeted conversions.  
-- Overall: **Control = volume winner**, **Test = efficiency winner**.   
+## Takeaway
+- Test wins on efficiency (higher CTR & CR, statistically significant).
+- Control wins on volume / lower CAC.
+- Practical recommendation: Use Test for conversion-focused spend; use Control for broad, lower-cost scale—or run a hybrid based on goals.
 
 ---
 
 ## Tools Used
 - Python, Pandas, NumPy  
 - Plotly (interactive visualizations)  
-- Statistical testing (z-tests, confidence intervals)  
+- Statistical testing (two-proportion z-tests, confidence intervals)
+
 
 ---
 
